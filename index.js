@@ -9,7 +9,18 @@ saveList = (bookList) => {
   localStorage.setItem("BookList", JSON.stringify(bookList));
 };
 
+saveBook = (book) => {
+  oldList = getList();
+  oldList.push(book);
+  saveList(oldList);
+};
+
 getList = () => {
+  if (localStorage.getItem("BookList") == null) {
+    const bookList = [];
+    saveList(bookList);
+  }
+
   return JSON.parse(localStorage.getItem("BookList"));
 };
 
@@ -31,22 +42,19 @@ bookForm.addEventListener("submit", (e) => {
   console.log(bookTitle);
 
   const newBook = new Book(bookTitle, bookAuthor);
-
-  bookList.push(newBook);
-
-  saveList(bookList);
-
-  const bookUI = `<p>Title: ${newBook.title} <br>
-                    author: ${newBook.author}</p>`;
-
-  bookTable.innerHTML += bookUI;
+  saveBook(newBook);
+  addToUI(newBook);
 });
 
 function displayList(list) {
   list.forEach((book) => {
-    const bookUI = `<p>Title: ${book.title} <br>
-    author: ${book.author}</p>`;
-
-    bookTable.innerHTML += bookUI;
+    addToUI(book);
   });
 }
+function addToUI(book) {
+  const bookUI = `<p>Title: ${book.title} <br>
+  author: ${book.author}</p>`;
+
+  bookTable.innerHTML += bookUI;
+}
+displayList(getList());
