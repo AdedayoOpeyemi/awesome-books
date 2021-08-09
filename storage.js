@@ -6,4 +6,4 @@ getList = () => {
   return JSON.parse(localStorage.getItem('BookList'))
 }
 
-export { saveList, getList }
+export { saveList }
