@@ -6,42 +6,47 @@ function Book(title, author) {
 }
 
 saveList = (bookList) => {
-  localStorage.setItem('BookList', JSON.stringify(bookList))
-}
+  localStorage.setItem("BookList", JSON.stringify(bookList));
+};
 
 getList = () => {
-  return JSON.parse(localStorage.getItem('BookList'))
-}
+  return JSON.parse(localStorage.getItem("BookList"));
+};
 
 hello = () => {
   return "Hello World!";
-}
+};
 
 const bookList = [];
 
-const bookTable = document.querySelector('.book_holder')
-const bookForm = document.querySelector('form')
+const bookTable = document.querySelector(".book_holder");
+const bookForm = document.querySelector("form");
 
-bookForm.addEventListener('submit', (e) => {
-
+bookForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const bookTitle = document.querySelector('#title').value;
-  const bookAuthor = document.querySelector('#author').value;
-  
-  console.log(bookTitle);
+  const bookTitle = document.querySelector("#title").value;
+  const bookAuthor = document.querySelector("#author").value;
 
+  console.log(bookTitle);
 
   const newBook = new Book(bookTitle, bookAuthor);
 
-  bookList.push(newBook)
+  bookList.push(newBook);
 
-  saveList(bookList)
+  saveList(bookList);
 
-  
-  
   const bookUI = `<p>Title: ${newBook.title} <br>
-                    author: ${newBook.author}</p>`
+                    author: ${newBook.author}</p>`;
 
-  bookTable.innerHTML += bookUI
-})
+  bookTable.innerHTML += bookUI;
+});
+
+function displayList(list) {
+  list.forEach((book) => {
+    const bookUI = `<p>Title: ${book.title} <br>
+    author: ${book.author}</p>`;
+
+    bookTable.innerHTML += bookUI;
+  });
+}
