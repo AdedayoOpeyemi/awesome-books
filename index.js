@@ -8,26 +8,34 @@ class Book {
   }
 }
 
-function saveList(bookList) {
-  localStorage.setItem('BookList', JSON.stringify(bookList));
-}
-
-function getList() {
-  if (localStorage.getItem('BookList') == null) {
-    const bookList = [];
-    saveList(bookList);
+class Storage {
+  static saveList(bookList) {
+    localStorage.setItem('BookList', JSON.stringify(bookList));
   }
-  return JSON.parse(localStorage.getItem('BookList'));
-}
 
-function saveBook(book) {
-  const oldList = getList();
-  oldList.push(book);
-  saveList(oldList);
-}
+  static getList() {
+    if (localStorage.getItem('BookList') == null) {
+      const bookList = [];
+      saveList(bookList);
+    }
+    return JSON.parse(localStorage.getItem('BookList'));
+  }
 
-function arrayRemove(arr, book) {
-  return arr.filter((ele) => ele.title !== book.title);
+  static saveBook(book) {
+    const oldList = getList();
+    oldList.push(book);
+    saveList(oldList);
+  }
+
+  static deleteBook(book) {
+    const oldList = getList();
+    const updatedList = arrayRemove(oldList, book);
+    saveList(updatedList)
+  }
+
+  static arrayRemove(arr, book) {
+    return arr.filter((ele) => ele.title !== book.title);
+  }
 }
 
 function deleteBook() {
