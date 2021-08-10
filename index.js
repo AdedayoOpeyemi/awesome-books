@@ -8,6 +8,22 @@ class Book {
   }
 }
 
+class BookList {
+  constructor(){
+    this.list = [];
+  }
+  addBook(book){
+    this.list.push(book)
+  }
+  removeBook(book){
+    this.list = BookList.arrayRemove(this.list, book)
+  }
+  static arrayRemove(arr, book) {
+    return arr.filter((ele) => ele.title !== book.title);
+  }
+
+}
+
 class Storage {
   static saveList(bookList) {
     localStorage.setItem('BookList', JSON.stringify(bookList));
@@ -37,6 +53,7 @@ class Storage {
     return arr.filter((ele) => ele.title !== book.title);
   }
 }
+
 
 function deleteBook() {
   document.querySelectorAll('.remove_book').forEach((button) => {
