@@ -1,9 +1,11 @@
 const bookTable = document.querySelector('.book_holder');
 const bookForm = document.querySelector('form');
 
-function Book(title, author) {
-  this.title = title;
-  this.author = author;
+class Book {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+  }
 }
 
 function saveList(bookList) {
