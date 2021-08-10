@@ -21,6 +21,12 @@ class BookList {
   static arrayRemove(arr, book) {
     return arr.filter((ele) => ele.title !== book.title);
   }
+  setList(list){
+    this.list = list;
+  }
+  getBooks(){
+    this.list;
+  }
 
 }
 
@@ -31,27 +37,32 @@ class Storage {
 
   static getList() {
     if (localStorage.getItem('BookList') == null) {
-      const bookList = [];
-      saveList(bookList);
+    
+      saveList(new BookList());
     }
-    return JSON.parse(localStorage.getItem('BookList'));
+    //return JSON.parse(localStorage.getItem('BookList'));
+    const bookList = Object.assign(
+      new BookList(),
+      JSON.parse(localStorage.getItem('BookList')),
+    );
+    bookList.setList(bookList.getBooks().map(function(book){
+      Object.assign(new Book(), book);
+    }))
+
   }
 
   static saveBook(book) {
     const oldList = getList();
-    oldList.push(book);
+    oldList.addBook(book);
     saveList(oldList);
   }
 
   static deleteBook(book) {
     const oldList = getList();
-    const updatedList = arrayRemove(oldList, book);
+    const updatedList = removeBook(oldList, book);
     saveList(updatedList)
   }
 
-  static arrayRemove(arr, book) {
-    return arr.filter((ele) => ele.title !== book.title);
-  }
 }
 
 
