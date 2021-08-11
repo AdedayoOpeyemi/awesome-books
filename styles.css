@@ -3,7 +3,7 @@ body {
 }
 
 h1 {
-  color:aqua;
+  color: aqua;
   size: 24px;
   font-style: oblique;
   margin-right: auto;
@@ -11,8 +11,9 @@ h1 {
   text-align: center;
 }
 
-.book_holder, form {
-  width: 35%;
+.book_holder,
+form {
+  width: 65%;
   min-width: 200px;
   min-height: 100px;
   margin-right: auto;
@@ -27,5 +28,12 @@ li {
 }
 
 .remove_book {
-  align-self: flex-end;
+  flex-grow: 1;
+  height: 50%;
+  align-self: center;
+  max-width: 100px;
+}
+
+.item {
+  flex: content;
 }
