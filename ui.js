@@ -9,7 +9,7 @@ export default class UI {
     <p>Title: ${book.title}</p>
     <p>author: ${book.author}</p>
     <button class="remove_book">Remove</button>
-    <hr></li>`;
+    </li>`;
 
     bookTable.innerHTML += bookUI;
   }

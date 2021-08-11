@@ -11,8 +11,8 @@ h1 {
   text-align: center;
 }
 
-.book_holder {
-  width: 25%;
+.book_holder, form {
+  width: 35%;
   min-width: 200px;
   min-height: 100px;
   margin-right: auto;
@@ -20,5 +20,12 @@ h1 {
 }
 
 li {
+  width: 100%;
   list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.remove_book {
+  align-self: flex-end;
 }
