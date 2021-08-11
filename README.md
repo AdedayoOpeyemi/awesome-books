@@ -41,6 +41,12 @@ The purpose of this project is to introduce us to Javascript while adding and mo
 - Twitter: [@oyelesiopy](https://twitter.com/oyelesiopy)
 - Linkedin: [linkedin](https://linkedin.com/opeyemioyelesi)
 
+👤 **Dongmo Armand**
+
+- Github: [@Dongmo12i](https://github.com/Dongmo12)
+- Twitter: [@Dongmo_Armmand](https://twitter.com/Dongmo_Armmand)
+- Linkedin: [linkedin](http://www.linkedin.com/in/dongmo-armand)
+
 ## Cloning repo for non programmers
 
 1. On GitHub, navigate to the main page of the repository.
