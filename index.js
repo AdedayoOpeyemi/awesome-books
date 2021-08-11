@@ -22,12 +22,11 @@ class BookList {
     return arr.filter((ele) => ele.title !== book.title);
   }
   setList(list){
-    this.list = list;
+    return this.list = list;
   }
   getBooks(){
-    this.list;
+    return this.list;
   }
-
 }
 
 class Storage {
@@ -37,24 +36,26 @@ class Storage {
 
   static getList() {
     if (localStorage.getItem('BookList') == null) {
-    
-      saveList(new BookList());
+      Storage.saveList(new BookList());
     }
-    //return JSON.parse(localStorage.getItem('BookList'));
     const bookList = Object.assign(
       new BookList(),
       JSON.parse(localStorage.getItem('BookList')),
     );
-    bookList.setList(bookList.getBooks().map(function(book){
-      Object.assign(new Book(), book);
-    }))
 
+    bookList.setList(
+      bookList.getBooks()
+        .map((book) => 
+          Object.assign(new Book(), book)),
+    )
+
+    return bookList;
   }
 
   static saveBook(book) {
-    const oldList = getList();
+    const oldList = Storage.getList();
     oldList.addBook(book);
-    saveList(oldList);
+    Storage.saveList(oldList);
   }
 
   static deleteBook(book) {
@@ -65,46 +66,99 @@ class Storage {
 
 }
 
-
-function deleteBook() {
-  document.querySelectorAll('.remove_book').forEach((button) => {
-    button.addEventListener('click', (e) => {
-      e.target.parentElement.remove();
-      const deleteTitle = e.target.parentElement.children[0].innerText.slice(7);
-      const deleteAuthor = e.target.parentElement.children[2].innerText.slice(8);
-      const bookDelete = new Book(deleteTitle, deleteAuthor);
-      const updatedList = arrayRemove(getList(), bookDelete);
-      saveList(updatedList);
-    });
-  });
-}
-
-function addToUI(book) {
-  const bookUI = `<div>
+class UI {
+  static addToUI(book) {
+    const bookUI = `<div>
     <p>Title: ${book.title}</p>
     <p>author: ${book.author}</p>
     <button class="remove_book">Remove</button>
   </div>`;
 
   bookTable.innerHTML += bookUI;
-  deleteBook();
+  }
+
+  static displayList(list) {
+    list.forEach(function(book){
+      UI.addToUI(book);
+    });
+  }
+
+  static deleteBook() {
+    document.querySelectorAll('.remove_book').forEach((button) => {
+      button.addEventListener('click'(function(e){
+        e.target.parentElement.remove();
+        const deleteTitle = e.target.parentElement.children[0].innerText.slice(7);
+        const deleteAuthor = e.target.parentElement.children[2].innerText.slice(8);
+        const bookDelete = new Book(deleteTitle, deleteAuthor);
+        const bookList = Storage.getList()
+        bookList.deleteBook(bookDelete)
+      }));
+    });
+  }
+
+
 }
 
-function displayList(list) {
-  list.forEach((book) => {
-    addToUI(book);
-  });
-}
-
-bookForm.addEventListener('submit', (e) => {
+document.addEventListener('DOMContentLoaded', UI.displayList(Storage.getList().list));
+bookForm.addEventListener('submit', (function(e){
   e.preventDefault();
 
   const bookTitle = document.querySelector('#title').value;
   const bookAuthor = document.querySelector('#author').value;
-
   const newBook = new Book(bookTitle, bookAuthor);
-  saveBook(newBook);
-  addToUI(newBook);
-});
+  Storage.saveBook(newBook);
+  UI.addToUI(newBook);
+}));
 
-displayList(getList());
+
+// function deleteBook() {
+//   document.querySelectorAll('.remove_book').forEach((button) => {
+//     button.addEventListener('click', (e) => {
+//       e.target.parentElement.remove();
+//       const deleteTitle = e.target.parentElement.children[0].innerText.slice(7);
+//       const deleteAuthor = e.target.parentElement.children[2].innerText.slice(8);
+//       const bookDelete = new Book(deleteTitle, deleteAuthor);
+//       const updatedList = arrayRemove(getList(), bookDelete);
+//       saveList(updatedList);
+//     });
+//   });
+// }
+
+
+
+// function addToUI(book) {
+//   const bookUI = `<div>
+//     <p>Title: ${book.title}</p>
+//     <p>author: ${book.author}</p>
+//     <button class="remove_book">Remove</button>
+//   </div>`;
+
+//   bookTable.innerHTML += bookUI;
+//   deleteBook();
+// }
+
+// function displayList(list) {
+//   list.forEach((book) => {
+//     addToUI(book);
+//   });
+// }
+
+// bookForm.addEventListener('submit', (e) => {
+//   e.preventDefault();
+
+//   const bookTitle = document.querySelector('#title').value;
+//   const bookAuthor = document.querySelector('#author').value;
+
+//   const newBook = new Book(bookTitle, bookAuthor);
+//   saveBook(newBook);
+//   addToUI(newBook);
+// });
+
+// displayList(getList());
+
+
+// abc.setList(
+//   abc.getBooks()
+//     .map(function(book){
+//       Object.assign(new Book(), book);
+// }))
