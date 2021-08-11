@@ -1,4 +1,4 @@
-class BookList {
+export default class BookList {
   constructor() {
     this.list = [];
   }
@@ -12,7 +12,9 @@ class BookList {
   }
 
   static arrayRemove(arr, book) {
-    return arr.filter((ele) => ele.title !== book.title && ele.author !== book.author);
+    return arr.filter(
+      (ele) => ele.title !== book.title && ele.author !== book.author,
+    );
   }
 
   setList(list) {

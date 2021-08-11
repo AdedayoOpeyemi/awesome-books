@@ -1,4 +1,7 @@
-class Storage {
+import Book from './book.js';
+import BookList from './booklist.js';
+
+export default class Storage {
   static saveList(bookList) {
     localStorage.setItem('BookList', JSON.stringify(bookList));
   }
@@ -13,8 +16,7 @@ class Storage {
     );
 
     bookList.setList(
-      bookList.getBooks()
-        .map((book) => Object.assign(new Book(), book)),
+      bookList.getBooks().map((book) => Object.assign(new Book(), book)),
     );
 
     return bookList;
