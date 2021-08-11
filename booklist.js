@@ -13,7 +13,7 @@ export default class BookList {
 
   static arrayRemove(arr, book) {
     return arr.filter(
-      (ele) => ele.title !== book.title && ele.author !== book.author,
+      (ele) => !(ele.title == book.title && ele.author == book.author)
     );
   }
 
