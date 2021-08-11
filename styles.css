@@ -13,11 +13,12 @@ h1 {
 
 .book_holder,
 form {
-  width: 65%;
-  min-width: 200px;
+  width: 40%;
+  min-width: 300px;
   min-height: 100px;
   margin-right: auto;
   margin-left: auto;
+  max-width: 500px;
 }
 
 li {
