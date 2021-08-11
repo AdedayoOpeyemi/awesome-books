@@ -1,0 +1,24 @@
+body {
+  justify-content: center;
+}
+
+h1 {
+  color:aqua;
+  size: 24px;
+  font-style: oblique;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.book_holder {
+  width: 25%;
+  min-width: 200px;
+  min-height: 100px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+li {
+  list-style: none;
+}

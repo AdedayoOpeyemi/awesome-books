@@ -5,11 +5,11 @@ const bookTable = document.querySelector('.book_holder');
 
 export default class UI {
   static addToUI(book) {
-    const bookUI = `<div>
+    const bookUI = `<li>
     <p>Title: ${book.title}</p>
     <p>author: ${book.author}</p>
     <button class="remove_book">Remove</button>
-    <hr></div>`;
+    <hr></li>`;
 
     bookTable.innerHTML += bookUI;
   }
