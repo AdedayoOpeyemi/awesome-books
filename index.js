@@ -4,10 +4,8 @@ import UI from './ui.js';
 
 const bookForm = document.querySelector('form');
 
-document.addEventListener(
-  'DOMContentLoaded',
-  UI.displayList(Storage.getList().list),
-);
+document.addEventListener('DOMContentLoaded', UI.displayList(Storage.getList().list));
+
 bookForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
