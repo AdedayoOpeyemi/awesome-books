@@ -17,7 +17,9 @@ export default class DisplayContent {
     if (id === "contact") {
       document.querySelector(".contact-info").setAttribute("style", "display: block");
     }
+  }
 
-
+  static renderTime(dateandtime){
+    document.querySelector('#dateAndTime').innerText = dateandtime;
   }
 }

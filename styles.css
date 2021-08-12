@@ -7,6 +7,10 @@ body {
   color: grey;
 }
 
+.book-form, .contact-info {
+  display: none;
+}
+
 h1 {
   color: aqua;
   font-size: 24px;
@@ -119,9 +123,5 @@ li a {
 }
 
 .navigation > li a:hover {
-  background-color: #111;
-}
-
-.add_book {
-  display: none;
+  background-color: rgb(130, 148, 175);
 }
