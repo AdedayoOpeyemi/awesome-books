@@ -83,3 +83,40 @@ input[type="submit"] {
   font-size: 20px;
 }
 
+/* Navigation */
+.navigation {
+  width: 100%;
+}
+
+.navigation > ul {
+  list-style-type: none;
+  margin: 0;
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 20px;
+  padding-left: 20px;
+  overflow: hidden;
+  background-color: #333;
+  display: flex;
+}
+
+.navigation > li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navigation > li a:hover {
+  background-color: #111;
+}
+
+.add_book {
+  display: none;
+}

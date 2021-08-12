@@ -18,9 +18,31 @@
     </div>
 
     <div>
-      <h1>Awesome books</h1>
-      <div><ul class="book_holder"></ul></div>
+      <h1 class="add_book">Awesome books</h1>
+      <div class="add_book"><ul class="book_holder"></ul></div>
       <br />
+      <form>
+        <h6>Add a new book</h6>
+
+        <input
+          type="text"
+          id="title"
+          name="title"
+          placeholder="Title"
+          required
+        /><br />
+        <input
+          type="text"
+          id="author"
+          name="author"
+          placeholder="Author"
+          required
+        /><br />
+        <input type="submit" value="Add" />
+      </form>
+    </div>
+    <div>
+
     <script type="module" src="index.js"></script>
   </body>
 </html>
