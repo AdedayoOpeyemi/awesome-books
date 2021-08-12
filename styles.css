@@ -2,6 +2,11 @@ body {
   justify-content: center;
 }
 
+.active-nav {
+  background-color: white;
+  color: grey;
+}
+
 h1 {
   color: aqua;
   font-size: 24px;

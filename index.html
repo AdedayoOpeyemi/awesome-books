@@ -10,17 +10,21 @@
   <body>
     <div class="navigation">
       <ul>
-        <li><a class="active" href="#home">Awesome Books</a></li>
-        <li><a href="index.html">List</a></li>
-        <li><a href="add.html">Add New</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a class="nav" href="">Awesome Books</a></li>
+        <li><a class="active-nav nav" id="list">List</a></li>
+        <li><a class="nav" id="addNew" >Add New</a></li>
+        <li><a class="nav" id="contact">Contact</a></li>
       </ul>
     </div>
 
-    <h1>Awesome books</h1>
-    <div><ul class="book_holder"></ul></div>
-    <br />
-    <div>
+    
+    <div class="page-content book-list">
+      <h1>Awesome books</h1>
+      <ul class="book_holder"></ul>
+    </div>
+
+    
+    <div class="page-content book-form">
       <h1 class="add_book">Awesome books</h1>
       <div class="add_book"><ul class="book_holder"></ul></div>
       <br />
@@ -44,7 +48,8 @@
         <input type="submit" value="Add" />
       </form>
     </div>
-    <div class="contact-info">
+
+    <div class="contact-info page-content">
       <h1>Contact Information</h1>
 
       <p>Do you have questions or you want yo just say "Hello"?</p>
