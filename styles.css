@@ -11,14 +11,37 @@ h1 {
   text-align: center;
 }
 
-.book_holder,
-form {
+.book_holder {
   width: 40%;
   min-width: 300px;
   min-height: 100px;
   margin-right: auto;
   margin-left: auto;
   max-width: 500px;
+}
+form {
+  margin-right: auto;
+  margin-left: auto;
+  width: 240px;
+  text-align: center;
+  padding: 24px;
+}
+
+h6 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: rgb(19, 92, 92);
+}
+
+input {
+  width: 80%;
+  margin-top: 8px;
+  margin-bottom:8px;
+}
+
+input[type="submit"] {
+ width: 40%;
+
 }
 
 ul {
