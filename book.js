@@ -3,8 +3,4 @@ export default class Book {
     this.title = title;
     this.author = author;
   }
-
-  bookAnnouce() {
-    return "${this.title} was authored by ${this.author}"
-  }
 }
