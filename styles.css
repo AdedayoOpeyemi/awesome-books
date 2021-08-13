@@ -28,6 +28,12 @@ h1 {
   margin-right: auto;
   margin-left: auto;
   max-width: 500px;
+  padding: 0;
+  border: 1px solid grey;
+}
+
+.navigation > li {
+  float: left;
 }
 
 form {
@@ -51,13 +57,8 @@ input {
   margin-bottom: 8px;
 }
 
-input[type="submit"] {
+input[type='submit'] {
   width: 30%;
-}
-
-.book_holder {
-  padding: 0;
-  border: 1px solid grey;
 }
 
 .book_holder > li {
@@ -112,10 +113,6 @@ input[type="submit"] {
   overflow: hidden;
   background-color: #333;
   display: flex;
-}
-
-.navigation > li {
-  float: left;
 }
 
 li a {
