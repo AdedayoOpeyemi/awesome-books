@@ -8,28 +8,65 @@
     <title>Awesome books</title>
   </head>
   <body>
-    <h1>Awesome books</h1>
-    <div><ul class="book_holder"></ul></div>
-    <br />
-    <form>
-      <h6>Add a new book</h6>
+    <div class="navigation">
+      <ul>
+        <li><a>Awesome Books</a></li>
+        <li class="empty-item"></li>
+        <li><a class="active-nav nav" id="list">List</a></li>
+        <li><a class="nav" id="addNew">Add New</a></li>
+        <li><a class="nav" id="contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="time">
+      <span id="dateAndTime"></span>
+    </div>
 
-      <input
-        type="text"
-        id="title"
-        name="title"
-        placeholder="Title"
-        required
-      /><br />
-      <input
-        type="text"
-        id="author"
-        name="author"
-        placeholder="Author"
-        required
-      /><br />
-      <input type="submit" value="Add" />
-    </form>
+    <div class="page-content book-list">
+      <h1>Awesome books</h1>
+      <ul class="book_holder"></ul>
+    </div>
+
+    <div class="page-content book-form">
+      <br />
+      <form>
+        <h6>Add a new book</h6>
+
+        <input
+          type="text"
+          id="title"
+          name="title"
+          placeholder="Title"
+          required
+        /><br />
+        <input
+          type="text"
+          id="author"
+          name="author"
+          placeholder="Author"
+          required
+        /><br />
+        <input type="submit" value="Add" />
+      </form>
+    </div>
+
+    <div class="contact-info page-content">
+      <h1>Contact Information</h1>
+
+      <p>Do you have questions or you want yo just say "Hello"?</p>
+      <p>You can reach out to us!</p>
+
+      <ul>
+        <li>Our e-mail mail@mail.com</li>
+        <li>Our phone number: 0123456789</li>
+        <li>Our addres: Creative Street Of the Internet</li>
+      </ul>
+    </div>
+    <footer class="footer">
+      <span>Copyright &copy; 2021 <br /></span>
+      <span>Mario, Opeyemi & Armand </span>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/2.0.2/luxon.js"></script>
     <script type="module" src="index.js"></script>
   </body>
 </html>
